@@ -10,7 +10,7 @@ Open in browser:
 ```
 localhost:3000
 ```
-## My process:
+## My process
 
 ### Built with
 
