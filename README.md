@@ -10,6 +10,11 @@ Open in browser:
 ```
 localhost:3000
 ```
+## Overview
+
+### Screenshot
+![](./screenshot.jpg)
+
 ## My process
 
 ### Built with
