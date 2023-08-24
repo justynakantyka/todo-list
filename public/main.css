@@ -37,6 +37,15 @@ body{
     border-radius: 10px;
 }
 
+input[type=checkbox]:checked {
+    background-color: #4682A9;
+}
+
+input[type=checkbox]:checked + label.form-check-label {
+    text-decoration: line-through #4682A9 2px;
+    user-select: none;
+}
+
 .footer {
     width: 100%;
     position: fixed;
