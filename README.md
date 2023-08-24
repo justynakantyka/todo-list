@@ -14,7 +14,6 @@ localhost:3000
 
 ### Screenshot
 ![](./screenshots/todoprivate.png)
-![](./screenshots/todowork.png)
 
 ## My process
 
