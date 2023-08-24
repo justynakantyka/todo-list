@@ -13,7 +13,7 @@ localhost:3000
 ## Overview
 
 ### Screenshot
-![](./screenshot.jpg)
+![](./screenshots/todoprivate.png)
 
 ## My process
 
