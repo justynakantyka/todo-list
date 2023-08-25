@@ -1,15 +1,20 @@
 # todo-list
-## How to Install and Run the Project
-
-Run commands:
+Simple and intuitive tool designed to help you manage your tasks efficiently, whether they are related to your private life or work responsibilities.
+## Getting Started
+1. Clone the Repository:
+```
+git@github.com:justynakantyka/todo-list.git
+```
+2. Install Dependencies:
 ```
 npm i
-nodemon index.js
 ```
-Open in browser:
+3. Run the Application locally:
 ```
-localhost:3000
+node index.js
 ```
+4. Open your web browser and navigate to: http://localhost:3000
+
 ## Overview
 
 ### Screenshot
