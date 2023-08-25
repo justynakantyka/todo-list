@@ -24,9 +24,8 @@ node index.js
 
 ### Built with
 
-* CSS custom properties
-* JavaScript
-* EJS
 * HTML
 * CSS
+* JavaScript
+* EJS
 * Bootstrap
