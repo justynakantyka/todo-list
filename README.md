@@ -23,7 +23,6 @@ node index.js
 ## My process
 
 ### Built with
-
 * HTML
 * CSS
 * JavaScript
