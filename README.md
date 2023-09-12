@@ -19,20 +19,18 @@ npm i
 ```
 mongod
 ```
-by default, mongodb server will start at port `27017`
+by default, mongodb server will start at port `27017` \
 4. Run the Application locally :
 ```
 node index.js
 ```
-Application is connected to mongodb database: `todolistDB://localhost:27017/todolistDB`
+Application is connected to mongodb database: `todolistDB://localhost:27017/todolistDB` \
 5. Open your web browser and navigate to: http://localhost:3000
 
 ## Overview
 
 ### Screenshot
 ![](./screenshots/todoprivate.png)
-
-## My process
 
 ## Built with
 * HTML
@@ -41,6 +39,7 @@ Application is connected to mongodb database: `todolistDB://localhost:27017/todo
 * EJS
 * Bootstrap
 * Mongoose
+* MongoDB
 
 ## To Do
 - [ ] Add to do list for work/home
