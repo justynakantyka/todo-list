@@ -40,6 +40,10 @@ input {
     padding-top: 0px;
 }
 
+label.form-check-label {
+    padding-left: 0.8rem; 
+}
+
 input[type=checkbox]:checked {
     background-color: #4682A9;
 }

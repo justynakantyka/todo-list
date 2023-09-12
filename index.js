@@ -43,6 +43,14 @@ app.post("/", async(req, res) => {
     res.redirect("/");
 });
 
+app.post("/delete", async(req, res) => {
+    const checkedTaskId = req.body.checkbox;
+
+    await Task.findByIdAndRemove(checkedTaskId);
+
+    res.redirect("/");
+});
+
 app.listen(port, () => {
     console.log(`App started on port ${port}`);
-})
+});
