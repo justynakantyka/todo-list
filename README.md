@@ -22,9 +22,12 @@ node index.js
 
 ## My process
 
-### Built with
+## Built with
 * HTML
 * CSS
 * JavaScript
 * EJS
 * Bootstrap
+
+## To Do
+- [ ] Fix a BUG: Clicking a label always selects the first checkbox
