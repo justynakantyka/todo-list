@@ -1,14 +1,14 @@
 <%- include("partials/header.ejs") %>
 <div class="main">
     <div class="list-group" id="heading">
-        <h1>Private List</h1>
+        <h1>ToDo List</h1>
     </div>
     <ul class="list-group">
-        <% if(locals.privateTaskList){ %>
-          <% privateTaskList.forEach((element) => { %>
+        <% if(locals.taskList){ %>
+          <% taskList.forEach((task) => { %>
             <li class="list-group-item">
               <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." id="flexCheck">
-              <label class="form-check-label" for="flexCheck"><%= element %></label>
+              <label class="form-check-label" for="flexCheck"><%= task.name %></label>
             </li>
           <% })} %>
         <li class="list-group-item add-item">

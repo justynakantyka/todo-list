@@ -1,31 +1,47 @@
 import express from "express";
 import bodyParser from "body-parser";
+import mongoose from "mongoose";
 
 const app = express();
 const port = 3000;
-const privateTaskList = [];
-const workTaskList = [];
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-    res.render("private.ejs", {privateTaskList: privateTaskList});
+mongoose.connect("mongodb://localhost:27017/todolistDB");
+
+const taskSchema = new mongoose.Schema({
+    name: String
+})
+
+const Task = mongoose.model("Task", taskSchema);
+const task = new Task({
+    name: "Take out the trash"
 });
 
-app.get("/work", (req, res) => {
-    res.render("work.ejs", {workTaskList: workTaskList});
-})
+const task2 = new Task({
+    name: "Clean mirrors and windows"
+});
 
-app.post("/", (req, res) => {
-    privateTaskList.push(req.body["task"]);
-    res.render("private.ejs", {privateTaskList: privateTaskList});
-})
+app.get("/", async (req, res) => {
+    const tasks = await Task.find({});
+    if(tasks.length === 0) {
+        await Task.insertMany([task, task2]);
+        res.redirect("/");
+    } else {
+        res.render("index.ejs", {taskList: tasks});
+    }
+});
 
-app.post("/work", (req, res) => {
-    workTaskList.push(req.body["task"]);
-    res.render("work.ejs", {workTaskList: workTaskList});
-})
+app.post("/", async(req, res) => {
+    const taskName = req.body.task;
+    const task = new Task({
+        name: taskName
+    });
+    task.save();
+
+    res.redirect("/");
+});
 
 app.listen(port, () => {
     console.log(`App started on port ${port}`);
