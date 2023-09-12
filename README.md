@@ -24,7 +24,7 @@ by default, mongodb server will start at port `27017`
 ```
 node index.js
 ```
-Application is connected to mongodb database todolistDB://localhost:27017/todolistDB
+Application is connected to mongodb database: `todolistDB://localhost:27017/todolistDB`
 5. Open your web browser and navigate to: http://localhost:3000
 
 ## Overview
