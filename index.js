@@ -23,15 +23,40 @@ const task2 = new Task({
     name: "Clean mirrors and windows"
 });
 
+const defaultTasks = [task, task2];
+
+const listSchema = {
+    name: String,
+    tasks: [taskSchema]
+};
+
+const List = mongoose.model("List", listSchema);
+
+
 app.get("/", async (req, res) => {
     const tasks = await Task.find({});
     if(tasks.length === 0) {
-        await Task.insertMany([task, task2]);
+        await Task.insertMany(defaultTasks);
         res.redirect("/");
     } else {
         res.render("index.ejs", {taskList: tasks});
     }
 });
+
+app.get("/:taskType", async(req, res) => {
+    const taskType = req.params.taskType;
+    const tasksList = await List.findOne({name: taskType});
+    if(!tasksList){
+        const list = new List({
+            name: taskType,
+            tasks: defaultTasks
+        })
+        list.save();
+        console.log('doesnt exist');
+    } else {
+        res.render("index.ejs", {listTitle: tasksList.name, newTasks: tasksList.tasks});
+    }
+  })
 
 app.post("/", async(req, res) => {
     const taskName = req.body.task;
