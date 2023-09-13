@@ -1,7 +1,17 @@
+:root {
+    /* Colors */
+    --white: #F6F4EB;
+    --light-blue: #4FC3F7;
+    --dark-gray: #333333;
+    --indigo: #303F9F;
+    --orange: #FF6D00;
+}
+
 body{
-    background-color: #91C8E4;
+    background-color: var(--light-blue);
     font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-gray);
     margin: 2em;
 }
 
@@ -10,11 +20,11 @@ body{
     position: relative;
     top: -2px;
     right: 4px;
-    filter: invert(25%) sepia(99%) saturate(369%) hue-rotate(159deg) brightness(94%) contrast(86%);
+    filter: invert(14%) sepia(99%) saturate(1%) hue-rotate(328deg) brightness(95%) contrast(88%);
 }
 
 .navigation-bar a{
-    color: #26597b; 
+    color: var(--dark-gray); 
     padding: 1em;
     text-decoration: none;
 }
@@ -25,10 +35,10 @@ body{
 }
 
 #heading {
-    background-color: #4682A9;
-    color: #F6F4EB;
+    background-color: var(--indigo);
+    color: var(--white);
     padding: 1em;
-    border: solid #4682A9;
+    border: solid var(--indigo);
     border-radius: 10px;
     text-align: center;
 }
@@ -46,11 +56,11 @@ label.form-check-label {
 }
 
 input[type=checkbox]:checked {
-    background-color: #4682A9;
+    background-color: var(--indigo);
 }
 
 input[type=checkbox]:checked + label.form-check-label {
-    text-decoration: line-through #4682A9 2px;
+    text-decoration: line-through var(--indigo) 2px;
     user-select: none;
 }
 
@@ -61,7 +71,7 @@ input[type=checkbox]:checked + label.form-check-label {
 
 .add-task-form input:focus {
     outline-width: 0;
-    border-bottom: #4682A9 solid 2px;
+    border-bottom: var(--indigo) solid 2px;
     text-align: center;
 }
 
@@ -70,10 +80,10 @@ input[type=checkbox]:checked + label.form-check-label {
     width: 30px;
     border-radius: 50%;
     border-color: transparent;
-    background-color: #4682A9;
+    background-color: var(--orange);
     font-size: 20px;
     border-width: 0;
-    color: #F6F4EB;
+    color: var(--white);
 }
 
 ::placeholder {

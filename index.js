@@ -12,20 +12,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect("mongodb://localhost:27017/todolistDB");
 
+
 const taskSchema = new mongoose.Schema({
     name: String
 })
 
 const Task = mongoose.model("Task", taskSchema);
-const task = new Task({
-    name: "Take out the trash"
-});
-
-const task2 = new Task({
-    name: "Clean mirrors and windows"
-});
-
-const defaultTasks = [task, task2];
 
 const listSchema = {
     name: String,
@@ -36,12 +28,7 @@ const List = mongoose.model("List", listSchema);
 
 app.get("/", async (req, res) => {
     const tasks = await Task.find({});
-    if(tasks.length === 0) {
-        await Task.insertMany(defaultTasks);
-        res.redirect("/");
-    } else {
-        res.render("index.ejs", {listTitle: defaultListName, taskList: tasks});
-    }
+    res.render("index.ejs", {listTitle: defaultListName, taskList: tasks});
 });
 
 app.get("/favicon.ico", (req,res)=>{
@@ -54,8 +41,8 @@ app.get("/:taskType", async(req, res) => {
     if(!tasksList){
         const list = new List({
             name: taskType,
-            tasks: defaultTasks
-        })
+            tasks: []
+        });
         await list.save();
         res.redirect("/" + taskType);
     } else {
