@@ -1,7 +1,7 @@
 <%- include("partials/header.ejs") %>
 <div class="main">
     <div class="list-group" id="heading">
-        <h1>ToDo List</h1>
+        <h1><%=listTitle%></h1>
     </div>
     <ul class="list-group">
         <% if(locals.taskList){ %>
@@ -10,13 +10,14 @@
               <div class="list-group-item">
                 <input class="form-check-input" type="checkbox" name="checkbox" value=<%=task._id%> onChange="this.form.submit()">
                 <label class="form-check-label" for="flexCheck"><%= task.name %></label>
+                <input type="hidden" name="listName" value="<%= listTitle %>"</input>
               </div>
             </form>
           <% })} %>
         <div class="list-group-item add-item">
           <form class="add-task-form" action="/" method="POST">
             <input type="input" name="task" placeholder="New Task" autocomplete="off">
-            <button class="btn-add-icon" type="submit" name="submit">+</button>
+            <button class="btn-add-icon" type="submit" name="listTitle" value="<%= listTitle %>">+</button>
           </form>
         </div>
       </ul>
