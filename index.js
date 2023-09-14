@@ -58,12 +58,12 @@ app.post("/", async(req, res) => {
     });
 
     if(listName === defaultListName) {
-        task.save();
+        await task.save();
         res.redirect("/");
     } else {
         const foundList = await List.findOne({name: listName});
         foundList.tasks.push(task);
-        foundList.save();
+        await foundList.save();
         res.redirect("/" + listName);
     }
 });
