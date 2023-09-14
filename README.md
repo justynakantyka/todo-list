@@ -30,7 +30,7 @@ Application is connected to mongodb database: `todolistDB://localhost:27017/todo
 ## Overview
 
 ### Screenshot
-![](./screenshots/todaylist.png)
+![](./screenshots/worklist.png)
 
 ## Built with
 * HTML
