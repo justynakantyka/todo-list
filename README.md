@@ -9,23 +9,27 @@ Simple and intuitive tool designed to help you manage your tasks efficiently, wh
 ## Getting Started
 1. Clone the Repository:
 ```
-git@github.com:justynakantyka/todo-list.git
+git clone git@github.com:justynakantyka/todo-list.git
 ```
-2. Install Dependencies:
+2. Go to the todo-list directory:
+```
+cd todo-list
+```
+3. Install Dependencies:
 ```
 npm i
 ```
-3. Run MongoDB server locally using command:
+4. Run MongoDB server locally using command:
 ```
 mongod
 ```
 by default, mongodb server will start at port `27017` \
-4. Run the Application locally :
+5. Run the Application locally :
 ```
 node index.js
 ```
 Application is connected to mongodb database: `todolistDB://localhost:27017/todolistDB` \
-5. Open your web browser and navigate to: http://localhost:3000
+6. Open your web browser and navigate to: http://localhost:3000
 
 ## Overview
 
